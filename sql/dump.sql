@@ -1,3 +1,2 @@
----
---- Placeholder for Real Dumps
----
+CREATE DATABASE  IF NOT EXISTS `mine` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `mine`;
