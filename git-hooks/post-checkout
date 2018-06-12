@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## stop it and remove it if its running - this way it always works fine on checkout
+docker stop mysql-presentation || true && docker rm mysql-presentation || true
+
+## specify exact version so we don't have to ever re download a new container during a presentation
+docker run --name mysql-presentation -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -d mysql:5.7.22
