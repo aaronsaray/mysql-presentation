@@ -27,7 +27,7 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary view structure for view `GradeA`
+-- Temporary view structure for view `StudentGrades`
 --
 
 DROP TABLE IF EXISTS `GradeA`;
@@ -126,7 +126,7 @@ UNLOCK TABLES;
 /*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
--- Final view structure for view `GradeA`
+-- Final view structure for view `StudentGrades`
 --
 
 /*!50001 DROP VIEW IF EXISTS `GradeA`*/;
