@@ -6,8 +6,8 @@
 
 Set up Git hooks by running the following:
 
-`ln -s git-hooks .git/hooks`
-`chmod +x git-hooks/post-checkout`
+`rm -r .git/hooks && ln -s ../hooks .git/hooks`
+`chmod +x hooks/post-checkout`
 
 ### Presentation
 
