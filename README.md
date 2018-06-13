@@ -7,6 +7,7 @@
 Set up Git hooks by running the following:
 
 `rm -r .git/hooks && ln -s ../hooks .git/hooks`
+
 `chmod +x hooks/post-checkout`
 
 ### Presentation
@@ -19,4 +20,4 @@ The details of the presentation branch are different below on each branch.
 
 ### Presentation Details
 
-> Here are details for this particular presentation branch.
+> This is a template for where presentation details would be.
