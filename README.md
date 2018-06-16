@@ -4,7 +4,7 @@
 
 ### Presentation Details
 
-#### Self Joins, and Hierarchy
+#### Self Joins
 
 You know left, right, inner, outer joins - but usually against other relational items.  What about self-joins?
 
@@ -61,4 +61,26 @@ Let's talk hierarchy data.
 
 - Nested Set Model
 
-- Think of this as nested containers, with left and right node values
+- Think of this as nested containers, with left and right node values on the flattened containers
+
+  - Let's see the values
+  - `SELECT node.name FROM accounts_nested AS node, accounts_nested AS parent
+     WHERE node.lft BETWEEN parent.lft AND parent.rgt AND parent.name = 'Master Account'
+     ORDER BY node.lft;`
+     
+  - I want to see the full tree of a child
+  - `SELECT parent.name FROM accounts_nested AS node, accounts_nested AS parent
+     WHERE node.lft BETWEEN parent.lft AND parent.rgt AND node.name = 'Bay View Loyal Subjects'
+     ORDER BY parent.lft`
+     
+     - Depth is much easier now
+     - `SELECT node.name, (COUNT(parent.name) - 1) AS depth
+        FROM accounts_nested AS node, accounts_nested AS parent
+        WHERE node.lft BETWEEN parent.lft AND parent.rgt
+        GROUP BY node.name, node.id ORDER BY node.lft;`
+        
+  - Want to see it pretty?
+  `SELECT CONCAT( REPEAT('   ', COUNT(parent.name) - 1), node.name) AS name
+   FROM accounts_nested AS node, accounts_nested AS parent
+   WHERE node.lft BETWEEN parent.lft AND parent.rgt
+   GROUP BY node.name, node.id ORDER BY node.lft;`
