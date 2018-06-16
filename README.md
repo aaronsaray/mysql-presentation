@@ -56,5 +56,9 @@ Let's talk hierarchy data.
          LEFT JOIN accounts AS t5 ON t5.parent_id = t4.id
          WHERE t1.name = 'Master Account'`
          - UGH!
+         
+ - this model sucks, so much extra work, and if you delete a branch you may lose the entire path
 
 - Nested Set Model
+
+- Think of this as nested containers, with left and right node values
