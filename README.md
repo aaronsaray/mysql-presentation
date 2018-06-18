@@ -19,8 +19,8 @@ Concerns:
 
 What to review:
 - `students` and `grades` tables
-- simple `select * from StudentGrades`; (merge)
-- `select s.name, v.grade from StudentGrades v inner join students s on s.id=v.student_id` can join on view
+- simple `select * from GradeA`; (merge)
+- `select s.name, v.grade from GradeA v inner join students s on s.id=v.student_id` can join on view
 
 - more complex `select * from StudentGrades`
 
@@ -32,7 +32,7 @@ What to review:
 - update using a view
     - no aggregates, simple, no joins
     - `SELECT table_name, is_updatable FROM information_schema.views;`
-    - `delete from StudentGrades where id=1;`
+    - `delete from GradeA where id=1;`
     - `select * from grades`    
 
 - ORM php code in `test.php` - run with `php test.php`
