@@ -69,7 +69,7 @@ Let's get more tough now:
 
   - Ok put a unique name
     - `ALTER TABLE categories ADD UNIQUE INDEX name_is_uq (name)`
-    - Verify `show indexes from categories`, now **do explain explain** and verify it makes the difference
+    - Verify `show indexes from categories`, now **do explain again** and verify it makes the difference
   - Some foreign keys are missing - drat
     - `ALTER TABLE users_movies_ratings ADD INDEX user_fk_idx (user_id), ADD INDEX movie_fk_idx (movie_id);`
     - `ALTER TABLE users_movies_ratings ADD CONSTRAINT user_fk FOREIGN KEY (user_id) REFERENCES users (id), ADD CONSTRAINT movie_fk FOREIGN KEY (movie_id) REFERENCES movies (id);`
