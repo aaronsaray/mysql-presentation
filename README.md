@@ -8,10 +8,10 @@
 
 This is slow.
 
-- Get all chickens who are breed 2 and 4 from first farm `select count(*) from chickens_farm1`
+- Get all chickens from first farm `select count(*) from chickens_farm1`
 - Now I want a random one: `select id, breed_id, weight from chickens_farm1 order by rand() limit 1` seems fast
 
-- Get all chickens who are breed 2 and 4 from second farm `select count(*) from chickens_farm2`
+- Get all chickens from second farm `select count(*) from chickens_farm2`
 - Now I want a random one `select id, breed_id, weight from chickens_farm2 order by rand() limit 1` obviously seeming slow
 - It has to scan 3000000 rows and then sort (this only gets harder if it has qualifiers)
 
