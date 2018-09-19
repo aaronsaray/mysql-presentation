@@ -4,7 +4,11 @@
 
 ### Setup Instructions
 
-Set up Git hooks by running the following:
+Have Docker installed, and my chosen MySQL image locally.  You might have to run this:
+
+`docker pull mysql:5.7.22`
+
+Then, set up Git hooks by running the following:
 
 `rm -r .git/hooks && ln -s ../hooks .git/hooks`
 
